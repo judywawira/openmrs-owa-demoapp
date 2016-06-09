@@ -7,8 +7,8 @@
     "url": "https://github.com/judywawira/openmrs-owa-demoapp"
   },
   "dependencies": {
-	
-	 "angular": "^1.5.3" 
+    "angular": "^1.5.3",
+    "openmrs.js": "0.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",

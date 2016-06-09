@@ -9,10 +9,23 @@
  * under the License.
  * Copyright (C) OpenMRS, LLC.  All Rights Reserved.
  */
- var openmrs = require('openmrs.bundle.min');
+import OpenMRS from '../../node_modules/openmrs.js/lib/openmrs';
+
 (function () {
   'use strict';
   document.addEventListener("DOMContentLoaded", function(event) {
     console.log('demoapp OpenMRS Open Web App Started.');
   });
+
+  const o = new OpenMRS();
+  o.login('admin', 'Admin123', 'http://localhost:8082/openmrs-standalone').then(() => {
+    o.api.location.getAllLocations().then((data) => {
+      console.log(data);
+    }).catch((err) => {
+      console.log(err);
+    });
+  }).catch((err) => {
+    console.log(err);
+  });
+
 }());
