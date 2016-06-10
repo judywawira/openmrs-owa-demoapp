@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='demoApp' ng-controller='demoAppController' ng-init='login()'>
   <head>
     <title>Demo App</title>
     <!-- openmrs favicon -->
@@ -17,9 +17,11 @@
     </header>
     <div class="clear"></div>
     <div id="body-wrapper">
-      <div class="instructions">Hello Pascal!Pretty neat.
+      <div class="instructions"> Welcome to my App
       <p>
-      <div>Search patient: <input type='text'></div>
+      <div>Search patient: <input type='text' ng-model='patientSearch' ng-change="search()"></div>
+      <br/>
+      <div ng-repeat='pl in patientList'>{{pl.display}}</div>
     </p>
       </div>
     </div>
